@@ -1,6 +1,6 @@
 # 忍者アクションゲーム - Ninja Game Showcase
 
-![thumbnail](assets/thumbnail.png) <!-- ゲームのサムネイル画像をここに -->
+![thumbnail](assets/ninja_game_thumbnail.png) <!-- ゲームのサムネイル画像をここに -->
 
 ## コンセプト
 
