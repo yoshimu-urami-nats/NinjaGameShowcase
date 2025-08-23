@@ -1,7 +1,7 @@
 
 # 忍者アクションゲーム - Ninja Game Showcase
 
-![thumbnail](assets/ninja_game_thumbnail.png) <!-- ゲームのサムネイル画像をここに -->
+![ninja_game_thumbnail](assets/ninja_game_thumbnail.png) <!-- ゲームのサムネイル画像をここに -->
 <br>
 <br>
 
@@ -65,9 +65,21 @@
 プレイヤーや敵キャラの基本的なアクション（移動／ジャンプ／攻撃）に加えて、  
 以下のようなロジックを自作 Blueprint で構築・実装しました
 
-
 ### ■ ダメージ処理・死亡判定の制御（イベント AnyDamage）  
 → イベントで1回だけ動作停止処理を実行し、5秒後にキャラクターを削除
+![BP_SS_death](assets/BP_SS_death.png)
+<br>
+<br>
+
+### ■ ラグドール物理処理の実装  
+→ 死亡時に「Ragdoll」へ切り替え、物理挙動と上向きのインパルスで自然に倒れる演出
+![BP_SS_ragdoll](assets/BP_SS_ragdoll.png)
+<br>
+<br>
+
+### ■ 攻撃ヒット時のダメージ付与（イベント Hit）
+→ ヒット時に Apply Damage を呼び出し、相手に1.0のダメージを送信
+![BP_SS_damage](assets/BP_SS_damage.png)
 <br>
 <br>
 
