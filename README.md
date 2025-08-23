@@ -80,6 +80,7 @@
 ### ■ 攻撃ヒット時のダメージ付与（イベント Hit）
 → ヒット時に Apply Damage を呼び出し、相手に1.0のダメージを送信
 ![BP_SS_damage](assets/BP_SS_damage.png)
+![ApplyDamage](assets/ApplyDamage.gif)
 <br>
 <br>
 
