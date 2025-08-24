@@ -97,7 +97,7 @@
 ### ■ サブレベル分割とレイヤー構成
 → 背景・光源・メッシュ・ギミックなど、目的別に7つのサブレベルへ分割して管理<br>
 → レイヤーは15種類に分類し、さらに階層ごとに細分化することで整理性と検索性を向上
-![SS_level](assets\SS_level.png)
+![SS_level](assets/SS_level.png)
 | サブレベル名 | 管理内容・役割 |
 |-------|------|
 | Stage01_Background | 遠景・空背景などの表示用 |
@@ -110,10 +110,10 @@
 <br>
 ■ ギミックあり・なし比較<br>
 
-![SS_gimmick](assets\SS_gimmick.png)　
+![SS_gimmick](assets/SS_gimmick.png)　
 <br>Graybox有効（ゲーム中の動的演出も表示）
 
-![SS_no_gimmick](assets\SS_no_gimmick.png)　
+![SS_no_gimmick](assets/SS_no_gimmick.png)　
 <br>Graybox無効（建築のみ）
 <br>
 
@@ -122,9 +122,9 @@
 → ポイントライトやポストプロセスで雰囲気強化（特に被写界深度によるジオラマ感）  
 → チェックポイント到達時に昼→夜切り替え演出あり（屋根が閉じる）  
 → 背景にフォリッジ（植物）を配置し、奥行きと没入感を強調  
-![SS_mini](assets\SS_mini.png)　
+![SS_mini](assets/SS_mini.png)　
 <br>手前と奥をボケるようにしてミニチュア撮影感を表現(昼の雰囲気)
-<br>![SS_night](assets\SS_night.png)　
+<br>![SS_night](assets/SS_night.png)　
 <br>夜の雰囲気
 
 ### 工夫ポイント
@@ -138,12 +138,12 @@
 ### ■ AI構築・行動制御のロジック
 - AIコントローラーのBlueprintでBTの開始処理
 <br>→ プレイ開始時にパトロールポイントを持っているか判定し、BT_Patrolを実行
-![SS_BP_BT](assets\SS_BP_BT.png)　
+![SS_BP_BT](assets/SS_BP_BT.png)　
 
 - ビヘイビアツリー（BT_Patrol）で敵の行動を制御
 <br>→ パトロール／プレイヤー検知後のスプリント／攻撃までをノードで管理
 <br>→ 条件付き分岐（Blackboard, Cooldown, Time Limit）で状況に応じたアクションを制御
-![SS_BT_EnemyAI](assets\SS_BT_EnemyAI.png)　
+![SS_BT_EnemyAI](assets/SS_BT_EnemyAI.png)　
 
 【敵キャラの追跡ロジック】  
 ・Blackboard Based Condition：プレイヤーを視認したかどうかを判定（TargetPawnがセットされているか）  
