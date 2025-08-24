@@ -95,12 +95,68 @@
 ステージの構成要素をレイヤー構造で分けて開発効率＆演出品質を向上を目指しました
 
 ### ■ サブレベル分割とレイヤー構成
-→ 背景・光源・メッシュ・ギミックなど、目的別に7つのサブレベルへ分割して管理
+→ 背景・光源・メッシュ・ギミックなど、目的別に7つのサブレベルへ分割して管理<br>
 → レイヤーは15種類に分類し、さらに階層ごとに細分化することで整理性と検索性を向上
+![SS_level](assets\SS_level.png)
+| サブレベル名 | 管理内容・役割 |
+|-------|------|
+| Stage01_Background | 遠景・空背景などの表示用 |
+| Stage01_Graybox | グレーボックスと当たり判定を仮置きで管理 |
+| Stage01_Lighting | 昼夜や雰囲気の制御の管理 |
+| Stage01_Megascans | 背景の植物やジオラマ感の演出の管理 |
+| Stage01_Mesh | 建物構造の管理 |
+| Stage01_Particles | パーティクルなど一時的な演出の管理 |
 
 <br>
+■ ギミックあり・なし比較<br>
+
+![SS_gimmick](assets\SS_gimmick.png)　
+<br>Graybox有効（ゲーム中の動的演出も表示）
+
+![SS_no_gimmick](assets\SS_no_gimmick.png)　
+<br>Graybox無効（建築のみ）
+<br>
+
+### ■空間演出の工夫（ライティング・演出）  
+→ Directional Light & SkyLight で時間帯変化を表現  
+→ ポイントライトやポストプロセスで雰囲気強化（特に被写界深度によるジオラマ感）  
+→ チェックポイント到達時に昼→夜切り替え演出あり（屋根が閉じる）  
+→ 背景にフォリッジ（植物）を配置し、奥行きと没入感を強調  
+![SS_mini](assets\SS_mini.png)　
+<br>手前と奥をボケるようにしてミニチュア撮影感を表現(昼の雰囲気)
+<br>![SS_night](assets\SS_night.png)　
+<br>夜の雰囲気
+
+### 工夫ポイント
+視認性とプレイアビリティの両立を意識しつつ、ロケーションの雰囲気を高める演出を実現グレーボックスを残すことで、  
+構造の視覚的理解を助ける開発後期でもレベルを整理・最適化しやすい構成
 <br>
 <br>
+
+## 敵キャラのAI構築とゲーム性の実装
+プレイヤーと対峙する敵キャラの行動制御やゲーム性を強化するロジックを実装しました
+### ■ AI構築・行動制御のロジック
+- AIコントローラーのBlueprintでBTの開始処理
+<br>→ プレイ開始時にパトロールポイントを持っているか判定し、BT_Patrolを実行
+![SS_BP_BT](assets\SS_BP_BT.png)　
+
+- ビヘイビアツリー（BT_Patrol）で敵の行動を制御
+<br>→ パトロール／プレイヤー検知後のスプリント／攻撃までをノードで管理
+<br>→ 条件付き分岐（Blackboard, Cooldown, Time Limit）で状況に応じたアクションを制御
+![SS_BT_EnemyAI](assets\SS_BT_EnemyAI.png)　
+
+【敵キャラの追跡ロジック】  
+・Blackboard Based Condition：プレイヤーを視認したかどうかを判定（TargetPawnがセットされているか）  
+・Cooldown / Time Limit：連続して追いかけすぎないように制限（ゲーム性のバランス調整）  
+・Begin Sprint → MoveTo → Melee：スプリント開始→近づいて攻撃  
+・End Sprint：追跡中断後にスプリント解除とアニメーション演出  
+
+【パトロール行動】  
+・Enemy Sensor：定期的にプレイヤーを検知（tick every 0.4s〜0.6s）  
+・Get Patrol Point → MoveTo → Wait → Pop Patrol Point：パトロールポイントの取得〜巡回処理  
+<br>
+
+
 
 ## ゲーム紹介動画 / GIF
 
@@ -113,11 +169,7 @@
 
 ## スクリーンショット
 
-| シーン | 画像 |
-|-------|------|
-| プレイヤー操作画面 | ![](assets/screenshot1.png) |
-| 敵の出現イベント | ![](assets/screenshot2.png) |
-| ジャンプ＆攻撃動作 | ![](assets/screenshot3.png) |
+
 <br>
 
 ## こだわりポイント・工夫点
