@@ -73,3 +73,10 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+# Ignore large demo media files
+assets/Bullet.gif
+assets/charagray.gif
+assets/hidebox.gif
+assets/night.gif
+assets/*.mp4
