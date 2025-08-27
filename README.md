@@ -136,8 +136,12 @@ BPの部品化／再利用性／イベント駆動設計を意識しながら構
 
 ### ■ 攻撃ヒット時のダメージ付与（イベント Hit）
 → ヒット時に Apply Damage を呼び出し、相手に1.0のダメージを送信
-![BP_SS_damage](assets/BP_SS_damage.png)
-![ApplyDamage](assets/ApplyDamage.gif)
+![BP_SS_damage](assets/BP_SS_damage.png)  
+
+<br>
+
+![ApplyDamage](assets/ApplyDamage.gif)  
+ダメージ・Hit処理/ラグドール処理  
 <br>
 
 ### 工夫ポイント
@@ -145,7 +149,7 @@ BPの部品化／再利用性／イベント駆動設計を意識しながら構
 - 関数・マクロを分割し、処理の再利用性と可読性を向上
 - 「ループ処理」や「ブランチ」「遷移判定」などで進行管理を明確化
 - Print String／Break Point／Watch などのデバッグ機能を活用し、逐次挙動の確認・修正を実施
-<br>
+
 <br>
 
 ## 空間設計・演出（サブレベル・フォリッジ・光）
@@ -165,24 +169,32 @@ BPの部品化／再利用性／イベント駆動設計を意識しながら構
 | Stage01_Particles | パーティクルなど一時的な演出の管理 |
 
 <br>
+
 ■ ギミックあり・なし比較<br>
 
-![SS_gimmick](assets/SS_gimmick.png)　
-<br>Graybox有効（ゲーム中の動的演出も表示）
+![SS_gimmick](assets/SS_gimmick.png)  
+Graybox有効（ゲーム中の動的演出も表示）
 
-![SS_no_gimmick](assets/SS_no_gimmick.png)　
-<br>Graybox無効（建築のみ）
 <br>
+
+![SS_no_gimmick](assets/SS_no_gimmick.png)  
+Graybox無効（建築のみ）
+<br>
+
 
 ### ■空間演出の工夫（ライティング・演出）  
 → Directional Light & SkyLight で時間帯変化を表現  
 → ポイントライトやポストプロセスで雰囲気強化（特に被写界深度によるジオラマ感）  
 → チェックポイント到達時に昼→夜切り替え演出あり（屋根が閉じる）  
 → 背景にフォリッジ（植物）を配置し、奥行きと没入感を強調  
-![SS_mini](assets/SS_mini.png)　
-<br>手前と奥をボケるようにしてミニチュア撮影感を表現(昼の雰囲気)
-<br>![SS_night](assets/SS_night.png)　
-<br>夜の雰囲気
+![SS_mini](assets/SS_mini.png)  
+手前と奥をボケるようにしてミニチュア撮影感を表現(昼の雰囲気)  
+<br>
+
+![SS_night](assets/SS_night.png)  
+夜の雰囲気
+<br>
+
 
 ### 工夫ポイント
 視認性とプレイアビリティの両立を意識しつつ、  
@@ -194,13 +206,14 @@ BPの部品化／再利用性／イベント駆動設計を意識しながら構
 ## 敵キャラのAI構築とゲーム性の実装
 プレイヤーと対峙する敵キャラの行動制御やゲーム性を強化するロジックを実装しました
 ### ■ AI構築・行動制御のロジック
-- AIコントローラーのBlueprintでBTの開始処理
-<br>→ プレイ開始時にパトロールポイントを持っているか判定し、BT_Patrolを実行
-![SS_BP_BT](assets/SS_BP_BT.png)　
+- AIコントローラーのBlueprintでBTの開始処理  
+→ プレイ開始時にパトロールポイントを持っているか判定し、BT_Patrolを実行
+![SS_BP_BT](assets/SS_BP_BT.png)  
+<br>
 
-- ビヘイビアツリー（BT_Patrol）で敵の行動を制御
-<br>→ パトロール／プレイヤー検知後のスプリント／攻撃までをノードで管理
-<br>→ 条件付き分岐（Blackboard, Cooldown, Time Limit）で状況に応じたアクションを制御
+- ビヘイビアツリー（BT_Patrol）で敵の行動を制御  
+→ パトロール／プレイヤー検知後のスプリント／攻撃までをノードで管理
+→ 条件付き分岐（Blackboard, Cooldown, Time Limit）で状況に応じたアクションを制御  
 ![SS_BT_EnemyAI](assets/SS_BT_EnemyAI.png)　
 
 【敵キャラの追跡ロジック】  
@@ -251,12 +264,15 @@ gif gif
 ## スクリーンショット
 ![SS_zenkei](assets/SS_zenkei.png)  
 マップ・レベル全景,(昼)  
+<br>
 
 ![SS_night2](assets/SS_night2.png)  
 ステージ上の巻物(白い輪のエフェクト付)を３つ集めたらゲームクリア,(夜)  
+<br>
 
 ![SS_puzzle](assets/SS_puzzle.png)  
 乗ると色が変わり、ジャンプすると動くブロックのパズル地帯  
+<br>
 
 ![SS_Bullet](assets/SS_Bullet.png)  
 -  バレットの射程圏内であっても、障害物があれば  
@@ -271,6 +287,7 @@ gif gif
 ![SS_seesaw](assets/SS_seesaw.png)  
 シーソーが傾いたら棘鉄球が転がってきて、当たると死ぬシーン
 <br>
+
 
 ## まとめ
 本作は、Unreal Engine 5 初学者向けの書籍をもとに制作を進めたアクションゲームです。
@@ -287,6 +304,7 @@ gif gif
 など、ゲーム開発における基本的な知識と工程を一通り経験することができました。  
 <br>
 
+
 ## 今後の展望
 今後は書籍の枠を越え、  
 ・自作のギミックやUI演出の追加  
@@ -299,6 +317,7 @@ gif gif
 現在は C++ による実装にも挑戦を開始しており、  
 Unreal Engine の内部挙動やパフォーマンス最適化の理解を深めながら、  
 より柔軟で高度なゲーム制作に取り組んでいます。
+  
   
 ## 今後の修正予定（進行管理）  
  - [ ]  デバッグライン削除（2025/09/—）  
