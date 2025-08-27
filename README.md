@@ -238,7 +238,7 @@ Triggerを用いた距離感のある攻撃演出（エリア内侵入検知 →
 ![Sunabokori](assets/Sunabokori.gif)  
 砂埃の演出  
 
-<!-- ![Bullet](assets/Bullet.gif)  -->
+<video src="assets/Bullet.mp4" controls loop muted playsinline width="480"></video>  
 砲撃の演出  
 
 
@@ -274,7 +274,7 @@ Triggerを用いた距離感のある攻撃演出（エリア内侵入検知 →
 ![SS_night2](assets/SS_night2.png)  
 ステージ上の巻物(白い輪のエフェクト付)を３つ集めたらゲームクリア,(夜)  
 <br>
-<!-- ![night](assets/night.gif)  -->
+<video src="assets/night.mp4" controls loop muted playsinline width="480"></video>  
 チェックポイント到達で背景のカプセルが閉じて夜が訪れる演出    
 <br>
 
@@ -285,7 +285,7 @@ Triggerを用いた距離感のある攻撃演出（エリア内侵入検知 →
 乗ると色が変わり、ジャンプすると動くブロックのパズル地帯  
 <br>
 
-<!-- ![hidebox](assets/hidebox.gif)  -->
+<video src="assets/hidebox.mp4" controls loop muted playsinline width="480"></video>  
 バレットの射程圏内であっても、障害物があれば盾として身を守れるシーン  
 <br>
 
@@ -298,7 +298,7 @@ Triggerを用いた距離感のある攻撃演出（エリア内侵入検知 →
 ※1Fのふすまの中は建物内が迷路になっていて、プレイヤーは直接通路が見えず、  
 箱庭の外観からグレーに透けている  
 
-<!-- ![charagray](assets/charagray.gif)  -->
+<video src="assets/charagray.mp4" controls loop muted playsinline width="480"></video>  
 ※キャラクターが廊下を進めるかどうかを手探りで探す仕組み  
 <br>
 
