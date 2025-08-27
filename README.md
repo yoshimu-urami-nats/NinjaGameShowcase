@@ -67,6 +67,9 @@ BPの部品化／再利用性／イベント駆動設計を意識しながら構
 動作確認環境：CPU Ryzen 7 9800X3D / メモリ 64GB / GPU RTX 3060 Ti  
 実行ファイル・ソースコードDL：[NinjaGame ビルド版（Google Drive パスワード付きZIP）](https://drive.google.com/drive/folders/1wzVKzXdGYd8YmtRdUYlmH78vELTRY_0F?usp=drive_link)   
   - パスワード：Ninja2025
+  - リンク先のGoogle Drive>NinjaGame>最新の日付のフォルダ>zipをDLしてください
+  - 「NinjaGame_Project_UE5.1_○○.zip」　・・・Windows向けの実行ファイル
+  - 「NinjaGame_Build_○○.zip」　・・・プロジェクトファイル（.uproject + Content等）
 
 <br>
 そのほか、詳細な説明は以降のセクションで記載しております。
