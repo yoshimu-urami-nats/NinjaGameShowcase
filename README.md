@@ -291,7 +291,7 @@ Triggerを用いた距離感のある攻撃演出（エリア内侵入検知 →
 バレットの射程圏内であっても、障害物があれば盾として身を守れるシーン  
 <br>
 
-![opendoor](assets\opendoor.gif)  
+![opendoor](assets/opendoor.gif)  
 床スイッチをすべてブルーにしたらふすまが開くギミック  
 <br>
 
